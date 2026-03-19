@@ -1,0 +1,33 @@
+name: Publish to NuGet
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+          dotnet-quality: 'preview'
+
+      - name: Restore
+        run: dotnet restore InitializeNL.DbMigrator.slnx
+
+      - name: Build
+        run: dotnet build InitializeNL.DbMigrator.slnx -c Release --no-restore
+
+      - name: Push InitializeNL.DbMigrator to NuGet
+        run: dotnet nuget push "InitializeNL.DbMigrator/bin/Release/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+
+      - name: Push InitializeNL.DbMigrator.Postgres to NuGet
+        run: dotnet nuget push "InitializeNL.DbMigrator.Postgres/bin/Release/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
