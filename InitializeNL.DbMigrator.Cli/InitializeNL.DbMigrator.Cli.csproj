@@ -7,6 +7,17 @@
     <AnalysisMode>All</AnalysisMode>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- .NET Tool -->
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>db-migrator-postgres</ToolCommandName>
+    <PackageId>InitializeNL.DbMigrator.Postgres.Cli</PackageId>
+    <Description>PostgreSQL database migration CLI tool. Supports up/down migrations, parallel execution, advisory locking, and multi-tenant discovery.</Description>
+    <Authors>Frank Hommers</Authors>
+    <PackageTags>database;migration;migrator;sql;postgres;postgresql;cli;tool;dotnet-tool</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/initialize-nl/db-migrator</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
