@@ -31,6 +31,3 @@ jobs:
 
       - name: Push InitializeNL.DbMigrator.Postgres to NuGet
         run: dotnet nuget push "InitializeNL.DbMigrator.Postgres/bin/Release/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
-
-      - name: Push InitializeNL.DbMigrator.Postgres.Cli to NuGet
-        run: dotnet nuget push "InitializeNL.DbMigrator.Cli/bin/Release/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
