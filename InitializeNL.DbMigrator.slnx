@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="InitializeNL.DbMigrator.Cli\InitializeNL.DbMigrator.Cli.csproj"/>
+  <Project Path="InitializeNL.DbMigrator.Postgres\InitializeNL.DbMigrator.Postgres.csproj"/>
+  <Project Path="InitializeNL.DbMigrator.Example\InitializeNL.DbMigrator.Example.csproj"/>
+  <Project Path="InitializeNL.DbMigrator\InitializeNL.DbMigrator.csproj"/>
+</Solution>
